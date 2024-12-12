@@ -5,11 +5,13 @@ import java.util.Properties;
 
 public class PropertiesLoader {
 
-    private static final String PROP_FILE = "/Users/kato/QA_Auto/SelenideProject/src/test/resources/test.properties";
-    private PropertiesLoader(){
+    private static final String PROP_FILE = "/test.properties";
+
+    private PropertiesLoader() {
 
     }
-    public static String loadProperty(String name){
+
+    public static String loadProperty(String name) {
         Properties props = new Properties();
 
         try {
@@ -18,7 +20,7 @@ public class PropertiesLoader {
             e.printStackTrace();
         }
         String value = "";
-        if(name != null){
+        if (name != null) {
             value = props.getProperty(name);
         }
         return value;

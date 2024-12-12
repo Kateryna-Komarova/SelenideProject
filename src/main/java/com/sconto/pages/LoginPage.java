@@ -60,13 +60,14 @@ public class LoginPage {
         return Selenide.page(LoginPage.class);
     }
 
-//    public LoginPage enterWrongData(DataTable table) {
-//        List<Map<String, String>> dataTable = table.asMaps();
-//        String email = dataTable.get(0).get("email");
-//        String password = dataTable.get(0).get("password");
-//        enterData(email, password);
-//        return Selenide.page(LoginPage.class);
-//    }
+    public LoginPage enterWrongData(DataTable table) {
+        List<Map<String, String>> dataTable = table.asMaps();
+        String email = dataTable.get(0).get("email");
+        String password = dataTable.get(0).get("password");
+        $(emailField).val(email);
+        $(passwordField).val(password);
+        return Selenide.page(this);
+    }
 
     @FindBy(css = ".titleHeadline")
     WebElement userNameTitle;

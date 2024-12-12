@@ -24,12 +24,13 @@ public class LoginSteps {
     }
 
     @And("User clicks on User icon")
-    public void click_User_icon(){
+    public void click_User_icon() {
         home = Selenide.page(HomePage.class);
         home.clickOnStatusLogin();
     }
+
     @Then("User verifies his name")
-    public void verify_name(){
+    public void verify_name() {
         login.verifyName();
     }
 
@@ -39,9 +40,11 @@ public class LoginSteps {
 
     }
 
-//    @And("User enter wrong email and valid password")
-//    public void enter_wrong_email(DataTable table) {
-//        login = Selenide.page(LoginPage.class);
-//        login.enterWrongData(table);
-//    }
+    @And("User enter wrong email and valid password")
+    public void enter_wrong_email(DataTable table) {
+        login = Selenide.page(LoginPage.class);
+        login.enterWrongData(table);
+    }
+
+
 }
