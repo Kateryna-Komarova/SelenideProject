@@ -4,7 +4,7 @@ Feature: Login
   Scenario:  Successful login
     Given User is on HomePage
     When User clicks on Login icon
-  #  Then User verifies Login form is displayed
+   Then User verifies Login form is displayed
     And User enters valid data
     And User clicks on Anmelden button
     And User clicks on User icon

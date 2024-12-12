@@ -9,6 +9,8 @@ import io.cucumber.java.en.When;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static com.sconto.pages.HomePage.baseURL;
+
 
 public class HomePageSteps {
     HomePage home;
@@ -16,7 +18,7 @@ public class HomePageSteps {
 
     @Given("User is on HomePage")
     public void on_HomePage() {
-        home = open("https://www.sconto.de/", HomePage.class);
+        home = open(baseURL, HomePage.class);
         getWebDriver().manage().window().maximize();
         home.acceptCookies();
     }
